@@ -1,0 +1,14 @@
+
+<div mat-dialog-content>
+    <p>Nombre del rol</p>
+    <mat-form-field >
+        <mat-label>Nombre del rol</mat-label>
+        <input matInput placeholder="Administrador" [(ngModel)]="data.nombre" [formControl]="nombre" required>
+        <mat-error *ngIf="nombre.invalid">Compo Requerido</mat-error>
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+    <button mat-button (click)="guardar()">Ok</button>
+</div>
