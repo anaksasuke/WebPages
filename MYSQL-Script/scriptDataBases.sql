@@ -9,9 +9,8 @@ create table usuarios(idUsuario tinyint unsigned primary key,
 correo varchar(30), username varchar(40), pwd varchar(15), 
 fechaAlta date, idRol tinyint, img varchar(50))ENGINE=INNODB;
 
-create table servidor(idServer tinyint unsigned primary key, 
-nombre varchar(30), correo varchar(30), username varchar(30) ,
-idEstatus tinyint, pwd varchar(30))ENGINE=INNODB;
+create table servidor(idServer tinyint unsigned primary key, idCuenta smallint
+nombre varchar(30),idEstatus tinyint)ENGINE=INNODB;
 
 create table anime(idAnime smallint unsigned primary key, 
 nombre varchar(50), descripcion varchar(150),
@@ -37,5 +36,8 @@ url varchar(150)
 
 create table estatus(idEstatus tinyint primary key, nombre varchar(30));
 
-create table cuentas(idCuenta smallint primary key, producto varchar(30) , 
-username varchar(50), pwd varchar(30))ENGINE=INNODB;
+create table cuentas(idCuenta smallint primary key, idTipocuenta tinyint , nombre varchar(30) , 
+username varchar(50), pwd varchar(30), idEstatus tinyint)ENGINE=INNODB;
+
+create table tipoCuenta(idTipocuenta tinyint PRIMARY KEY, nombreTipo VARCHAR(30))ENGINE=INNODB;
+

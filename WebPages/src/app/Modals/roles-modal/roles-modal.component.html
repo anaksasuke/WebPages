@@ -3,12 +3,13 @@
     <p>Nombre del rol</p>
     <mat-form-field >
         <mat-label>Nombre del rol</mat-label>
-        <input matInput placeholder="Administrador" [(ngModel)]="data.nombre" [formControl]="nombre" required>
-        <mat-error *ngIf="nombre.invalid">Compo Requerido</mat-error>
+        <input matInput placeholder="Administrador" [(ngModel)]="data.nombre"  required>
+        <mat-error *ngIf="valName == true">Compo Requerido</mat-error>
     </mat-form-field>
 </div>
 
 <div mat-dialog-actions>
     <button mat-button (click)="cancelar()">Cancelar</button>
-    <button mat-button (click)="guardar()">Ok</button>
+    <button mat-button (click)="guardar()" *ngIf = "action == false">Guardar</button>
+    <button mat-button (click)="editar()" *ngIf = "action == true">Actualizar</button>
 </div>

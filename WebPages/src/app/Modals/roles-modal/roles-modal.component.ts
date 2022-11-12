@@ -11,7 +11,9 @@ import { RolService } from '../../Servicios/rol.service'
 })
 export class RolesModalComponent implements OnInit {
 
-  nombre = new FormControl('', [Validators.required, Validators.email]);
+  action:boolean = false;
+  valName:boolean = false;
+
   constructor(
     public dialogRef: MatDialogRef<RolesModalComponent>,
     public RolServes: RolService,
@@ -20,19 +22,42 @@ export class RolesModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.data.idRol > 0){
+      this.action = true;
+    }
   }
 
   cancelar(){
     this.dialogRef.close();
   }
 
-  guardar(){
-    console.log(this.data);
-    this.RolServes.saveRol(this.data).subscribe(result=>{
-      console.log(result);
-    },error=>{
-      console.log(error);
-    })
+  validarCampo(){
+    if(this.data.nombre.trim() == "" || this.data.nombre.length <= 0){
+      this.valName = true;
+    }
+  }
+
+  async guardar(){
+    await this.validarCampo();
+    if(!this.valName){
+      this.RolServes.saveRol(this.data).subscribe(result=>{
+        console.log(result);
+      },error=>{
+        console.log(error);
+      })
+    }
+  }
+
+
+  async editar(){
+    await this.validarCampo();
+    if(!this.valName){
+      this.RolServes.updateRol(this.data).subscribe(result=>{
+        console.log(result);
+      },error=>{
+        console.log(error);
+      })
+    }
   }
 
 }

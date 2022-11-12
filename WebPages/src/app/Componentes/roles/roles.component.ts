@@ -16,7 +16,6 @@ export class RolesComponent implements OnInit {
 
   Columns = ['Nombre' , 'Acciones'];
   dataSource:any;
-  rolVacio:modelRol = { idRol: 0 , nombre: "" };
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
 
@@ -41,7 +40,8 @@ export class RolesComponent implements OnInit {
 
 
   nuevo(){
-    this.showModal(this.rolVacio);
+    const newRol: modelRol= { idRol: 0 , nombre: "" };
+    this.showModal(newRol);
   }
 
   showModal(rol:modelRol){
@@ -58,7 +58,7 @@ export class RolesComponent implements OnInit {
   }
 
   cargarDatos(row:modelRol){
-    console.log(row);
+    this.showModal(row);
   }
 
   Buscador(value:string){

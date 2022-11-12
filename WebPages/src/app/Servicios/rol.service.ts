@@ -7,7 +7,7 @@ import { modelRol } from '../Modelos/modelRol';
 })
 export class RolService {
 
-  url = "https://192.168.0.123:443/Roles/"; //Usar ruta donde guardes tus php para el back 
+  url = "https://192.168.0.123/API/Roles/"; //Usar ruta donde guardes tus php para el back 
 
   constructor(public http : HttpClient) { }
 
@@ -21,7 +21,7 @@ export class RolService {
   }
 
   updateRol(Rol:any){
-    return this.http.post(`${this.url}updateRol`, Rol);
+    return this.http.post(`${this.url}updateRol.php`, Rol);
   }
 
 }
