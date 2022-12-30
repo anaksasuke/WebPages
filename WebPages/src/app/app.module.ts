@@ -22,6 +22,8 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { HttpClientModule} from '@angular/common/http';
 import { RolesModalComponent } from './Modals/roles-modal/roles-modal.component';
+import { EstatusComponent } from './Componentes/estatus/estatus.component';
+import { EstatusModalComponent } from './Modals/estatus-modal/estatus-modal.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { RolesModalComponent } from './Modals/roles-modal/roles-modal.component'
     AppComponent,
     RolesComponent,
     RolesModalComponent,
+    EstatusComponent,
+    EstatusModalComponent,
     
   ],
   imports: [

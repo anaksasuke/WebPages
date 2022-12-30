@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+ }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 50%;
+  }
+  
+  td, th {
+    width: 13%;
+  }
+  
+  .mat-toolbar.mat-primary {
+    background:white;
+    color: black;
+  }
+
+  .example-ripple-container {
+    cursor: pointer;
+    text-align: center;  
+    width: 300px;
+    height: 300px;
+    line-height: 300px;  
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;  
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #Actualizar{
+    display: none;
+  }
+
+  th {
+    background-color:#303030;
+  }
+  
+  tr:nth-child(odd) {
+    background-color:#303030;
+  }
+  
+  tr:nth-child(even) {
+    background-color:#303030;
+  }
+
